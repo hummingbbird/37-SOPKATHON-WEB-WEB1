@@ -9,6 +9,7 @@ globalStyle("html, body", {
   boxSizing: "border-box",
   scrollBehavior: "smooth",
   fontSize: "62.5%",
+  fontFamily: "Pretendard",
 
   WebkitFontSmoothing: "antialiased",
   MozOsxFontSmoothing: "grayscale",
