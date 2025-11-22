@@ -3,18 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as styles from "./detail.css";
 import leftIcon from "./../../assets/icons/leftIcon.png";
 import { getVideoData } from "../../apis/getVideoData";
-// import likeOn from "../../assets/icons/like-on.png";
-// import likeOff from "../../assets/icons/like-off.png";
-// 실제 API 경로에 맞게 수정해서 사용하시면 됩니다.
-// const getVideo = async (videoId) => {
-//   const res = await fetch(`/api/v1/videos?videoId=${videoId}`);
-//   if (!res.ok) {
-//     throw new Error("영상 조회에 실패했습니다.");
-//   }
-//   const json = await res.json();
-//   // 응답 형식: { data: { memberId, nickname, videoUrl, thumbnailUrl, likeCount, content, score } }
-//   return json.data;
-// };
+import likeOn from "./../../assets/icons/like_on.png";
+import likeOff from "./../../assets/icons/like_off.png";
 
 export const DetailPage = () => {
   const navigate = useNavigate();
@@ -48,6 +38,19 @@ export const DetailPage = () => {
 
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handlePushLike = () => {
+    // if (!videoData) {
+    //   return;
+    // }
+    // const isCurrentlyLiked = videoData.isLiked;
+    // const likeCountChange = isCurrentlyLiked ? -1 : 1;
+    // setVideoData({
+    //   ...videoData,
+    //   isLiked: !isCurrentlyLiked,
+    //   likeCount: videoData.likeCount + likeCountChange,
+    // });
   };
 
   if (loading) {
@@ -102,6 +105,12 @@ export const DetailPage = () => {
       <div className={styles.content}>{videoData.content}</div>
 
       <div>
+        <button type="button" onClick={handlePushLike}>
+          <img
+            src={videoData.isLiked ? likeOn : likeOff}
+            className={styles.iconStyle}
+          />
+        </button>
         <p className={styles.likeText}>{videoData.likeCount}</p>
       </div>
     </div>

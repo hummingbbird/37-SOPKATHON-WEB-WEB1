@@ -2,7 +2,7 @@ import { get } from "./http";
 
 export const getVideoData = async (videoId) => {
   try {
-    const response = await get(`/api/v1/videos/videos/${videoId}`);
+    const response = await get(`/api/v1/videos/${videoId}`);
     console.log("Get Video Data API response:", response);
 
     return response.data;
