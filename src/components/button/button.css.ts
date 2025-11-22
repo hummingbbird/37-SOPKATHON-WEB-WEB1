@@ -29,12 +29,11 @@ export const buttonVariants = styleVariants({
       color: color.white,
     },
   ],
-  solid: [
+  gray: [
     base,
     {
-      border: `1px solid ${color.brand["red"]}`,
-      backgroundColor: color.white,
-      color: color.brand["red"],
+      backgroundColor: color.gray[500],
+      color: color.gray[800],
     },
   ],
   default: [
