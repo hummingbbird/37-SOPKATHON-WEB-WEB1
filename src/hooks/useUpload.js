@@ -21,7 +21,6 @@ const DEFAULT_OPTIONS = {
   onSuccess: null,
   onError: null,
   onProgress: null,
-  mockMode: import.meta.env.DEV && import.meta.env.VITE_MOCK_UPLOAD === "true", // 개발 모드에서 Mock 사용
 };
 
 /**
@@ -33,7 +32,6 @@ const DEFAULT_OPTIONS = {
  * @param {Function} options.onSuccess - 업로드 성공 시 콜백
  * @param {Function} options.onError - 업로드 실패 시 콜백
  * @param {Function} options.onProgress - 업로드 진행률 콜백
- * @param {boolean} options.mockMode - Mock 모드 활성화 (로컬 테스트용, 기본값: VITE_MOCK_UPLOAD 환경변수)
  * @returns {Object} 업로드 관련 상태 및 함수
  */
 /**
@@ -121,58 +119,7 @@ const useUpload = (options = {}) => {
       setError(null);
 
       try {
-        // Mock 모드: 실제 서버 요청 없이 시뮬레이션
-        if (config.mockMode) {
-          // eslint-disable-next-line no-console
-          console.log("🔧 Mock 모드: 업로드 시뮬레이션 시작", file.name);
-
-          // 진행률 시뮬레이션
-          const simulateProgress = () => {
-            let progress = 0;
-            const interval = setInterval(() => {
-              progress += Math.random() * 15;
-              if (progress >= 100) {
-                progress = 100;
-                clearInterval(interval);
-              }
-              setProgress(Math.min(Math.round(progress), 100));
-              if (config.onProgress) {
-                config.onProgress(Math.min(Math.round(progress), 100));
-              }
-            }, 100);
-          };
-
-          simulateProgress();
-
-          // 2-3초 후 성공 응답 시뮬레이션
-          await new Promise((resolve) =>
-            setTimeout(resolve, 2000 + Math.random() * 1000),
-          );
-
-          const mockResponse = {
-            id: `mock_${Date.now()}`,
-            filename: file.name,
-            size: file.size,
-            type: file.type,
-            url: URL.createObjectURL(file), // 로컬 파일 URL
-            uploadedAt: new Date().toISOString(),
-            message: "Mock 모드: 업로드 성공 (실제 서버 요청 없음)",
-          };
-
-          setStatus(UPLOAD_STATUS.SUCCESS);
-          setUploadedFile(mockResponse);
-          setProgress(100);
-
-          if (config.onSuccess) {
-            config.onSuccess(mockResponse);
-          }
-
-          // eslint-disable-next-line no-console
-          console.log("✅ Mock 모드: 업로드 완료", mockResponse);
-          return mockResponse;
-        }
-
-        // 실제 업로드 요청 (axios 사용)
+        // 업로드 요청 (axios 사용)
         // FormData 생성
         const formData = new FormData();
         formData.append("file", file);
@@ -257,11 +204,10 @@ const useUpload = (options = {}) => {
   }, [cancel]);
 
   /**
-   * 파일 선택 다이얼로그 열기 (모바일: 갤러리/카메라, 데스크톱: 파일 탐색기)
+   * 파일 선택 다이얼로그 열기 (모바일: 갤러리, 데스크톱: 파일 탐색기)
    * @param {Object} options - 파일 선택 옵션
    * @param {boolean} options.multiple - 여러 파일 선택 허용
    * @param {string} options.accept - 허용할 파일 타입 (예: "video/*")
-   * @param {string} options.capture - 모바일에서 카메라 직접 접근 ("user" | "environment" | null)
    */
   const openFileDialog = useCallback(
     (options = {}) => {
@@ -270,11 +216,6 @@ const useUpload = (options = {}) => {
         input.type = "file";
         input.accept = options.accept || "video/*";
         input.multiple = options.multiple || false;
-
-        // 모바일에서 카메라 직접 접근 옵션
-        if (isMobileDevice && options.capture) {
-          input.capture = options.capture;
-        }
 
         input.style.display = "none";
         document.body.appendChild(input);
