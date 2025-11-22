@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import * as styles from "./detail.css";
 import leftIcon from "./../../assets/icons/leftIcon.png";
 import { getVideoData } from "../../apis/getVideoData";
+import { useLike } from "../../hooks/useLike";
 import likeOn from "./../../assets/icons/like_on.png";
 import likeOff from "./../../assets/icons/like_off.png";
 
@@ -13,6 +14,11 @@ export const DetailPage = () => {
   const [videoData, setVideoData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const { likeCount, isLiked, isLiking, handleLike } = useLike(
+    id,
+    videoData?.likeCount || 0
+  );
 
   useEffect(() => {
     if (!id) {
@@ -34,23 +40,18 @@ export const DetailPage = () => {
     };
 
     fetchVideo();
-  }, []);
+  }, [id]);
 
   const handleBack = () => {
     navigate(-1);
   };
 
-  const handlePushLike = () => {
-    // if (!videoData) {
-    //   return;
-    // }
-    // const isCurrentlyLiked = videoData.isLiked;
-    // const likeCountChange = isCurrentlyLiked ? -1 : 1;
-    // setVideoData({
-    //   ...videoData,
-    //   isLiked: !isCurrentlyLiked,
-    //   likeCount: videoData.likeCount + likeCountChange,
-    // });
+  const handlePushLike = async () => {
+    try {
+      await handleLike();
+    } catch (error) {
+      alert("좋아요 처리 중 오류가 발생했습니다.");
+    }
   };
 
   if (loading) {
@@ -105,13 +106,14 @@ export const DetailPage = () => {
       <div className={styles.content}>{videoData.content}</div>
 
       <div>
-        <button type="button" onClick={handlePushLike}>
+        <button type="button" onClick={handlePushLike} disabled={isLiking}>
           <img
-            src={videoData.isLiked ? likeOn : likeOff}
+            src={isLiked ? likeOn : likeOff}
             className={styles.iconStyle}
+            alt="좋아요"
           />
         </button>
-        <p className={styles.likeText}>{videoData.likeCount}</p>
+        <p className={styles.likeText}>{likeCount}</p>
       </div>
     </div>
   );
