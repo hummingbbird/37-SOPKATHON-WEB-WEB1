@@ -67,8 +67,8 @@
 
 <h2> 🛠 기술스택 </h2>
 
-| 역할                       | 종류                                                                                                                                                                                                              |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| 역할                       | 종류|
+| -------------------------- | ---|
 | **`Build Tool`**           | ![VITE](https://img.shields.io/badge/VITE-646CFF?style=for-the-badge&logo=Vite&logoColor=white)                                                                                                                   |
 | **`Library`**              | ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white)                                                                                                                |
 | **`Programming Language`** | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=white)                                                                                             |
