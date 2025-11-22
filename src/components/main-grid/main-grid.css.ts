@@ -4,7 +4,7 @@ import { style } from "@vanilla-extract/css";
 export const container = style({
   display: "grid",
   gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-  gridAutoRows: "130px", // 한 "행" 높이 (카드 높이보다 작게 잡으면 겹쳐 보임)
+  gridAutoRows: "150px", // 한 "행" 높이 (카드 높이보다 작게 잡으면 겹쳐 보임)
   columnGap: "0",
   rowGap: "0",
   position: "relative",

@@ -6,8 +6,8 @@ export const container = style({
   overflow: "hidden",
   display: "block",
   cursor: "pointer",
-  width: "160px",
-  height: "250px",
+  width: "16.3rem",
+  height: "29rem",
 });
 
 export const image = style({
@@ -20,7 +20,6 @@ export const image = style({
 
 const overlayBase = style({
   position: "absolute",
-  fontSize: "0.875rem",
   lineHeight: 1.3,
 });
 
@@ -29,14 +28,14 @@ export const nicknameWrapper = style([
   {
     display: "flex",
     alignItems: "center",
-    gap: "6px",
-    top: "8px",
-    left: "12px",
+    gap: "0.6rem",
+    top: "0.8rem",
+    left: "1.2rem",
   },
 ]);
 
 export const badge = style({
-  width: "20px", // TODO: 이미지 크기
+  width: "2rem", // TODO: 이미지 크기
 });
 
 export const nickname = style([
@@ -48,18 +47,18 @@ export const nickname = style([
 export const likes = style([
   overlayBase,
   {
-    right: "12px",
-    bottom: "8px",
+    right: "1.2rem",
+    bottom: "0.8rem",
     display: "flex",
     alignItems: "center",
     color: "#FFFFFF",
-    gap: "2px",
+    gap: "0.2rem",
   },
 ]);
 
 export const likeIcon = style({
-  width: "16px",
-  height: "16px",
+  width: "1.6rem",
+  height: "1.6rem",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
