@@ -46,8 +46,12 @@ export const form = style({
 });
 
 export const iconBox = style({
-  margin: "5rem auto",
-  width: "22.9rem",
+  position: "absolute",
+  top: "-20%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "23rem",
+  zIndex: 2,
 });
 
 export const inputBox = style({
