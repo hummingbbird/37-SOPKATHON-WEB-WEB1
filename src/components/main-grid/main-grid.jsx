@@ -16,8 +16,9 @@ const MainGrid = ({ videos }) => {
           .join(" ");
 
         return (
-          <div key={video.id ?? index} className={classNames}>
+          <div key={video.videoId} className={classNames}>
             <VideoPreview
+              idx={index}
               nickname={video.nickname}
               likeCount={video.likeCount}
               imageUrl={video.imageUrl}

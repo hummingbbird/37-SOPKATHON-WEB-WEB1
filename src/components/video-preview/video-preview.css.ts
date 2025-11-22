@@ -24,11 +24,23 @@ const overlayBase = style({
   lineHeight: 1.3,
 });
 
-export const nickname = style([
+export const nicknameWrapper = style([
   overlayBase,
   {
+    display: "flex",
+    alignItems: "center",
+    gap: "6px",
     top: "8px",
     left: "12px",
+  },
+]);
+
+export const badge = style({
+  width: "20px", // TODO: 이미지 크기
+});
+
+export const nickname = style([
+  {
     fontWeight: 800,
   },
 ]);
