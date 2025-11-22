@@ -1,9 +1,9 @@
 import * as styles from "./video-preview.css";
 import { style } from "@vanilla-extract/css";
-import icGood from "./../../assets/icons/icon-good.svg";
-import icFirst from "./../../assets/icons/icon-first.svg";
-import icSecond from "./../../assets/icons/icon-second.svg";
-import icThird from "./../../assets/icons/icon-third.svg";
+import icGood from "../../assets/icons/ic-good.svg";
+import icFirst from "../../assets/icons/icon-first.svg";
+import icSecond from "../../assets/icons/icon-second.svg";
+import icThird from "../../assets/icons/icon-third.svg";
 
 const RankBadge = ({ idx }) => {
   switch (idx) {
