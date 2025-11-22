@@ -14,6 +14,10 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Splash />,
+      },
+      {
+        index: "/main",
         element: <MainPage />,
       },
       {
@@ -29,9 +33,5 @@ export const router = createBrowserRouter([
   {
     path: "sign-up",
     element: <SignUpPage />,
-  },
-  {
-    path: "splash",
-    element: <Splash />,
   },
 ]);
