@@ -8,7 +8,6 @@ export const uploadVideo = async (videoFile, content, memberId) => {
 
   return await post(API_URL.VIDEOS, formData, {
     headers: {
-      "Content-Type": "multipart/form-data",
       memberId: memberId,
     },
   });
