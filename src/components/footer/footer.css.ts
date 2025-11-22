@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { color } from "../../styles/token/color";
 
 export const footerContainer = style({
   position: "fixed",
@@ -45,8 +46,8 @@ export const iconButton = style({
 export const centerButton = style({
   width: "44px",
   height: "44px",
-  borderRadius: "50%",
-  backgroundColor: "#D9D9D9",
+  borderRadius: "6.25rem",
+  backgroundColor: color.brand.red,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -57,7 +58,7 @@ export const centerButton = style({
   boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
   ":hover": {
     transform: "scale(1.05)",
-    backgroundColor: "#CCCCCC",
+    opacity: 0.9,
   },
   ":active": {
     transform: "scale(0.95)",
@@ -74,4 +75,5 @@ export const centerIcon = style({
   width: "24px",
   height: "24px",
   display: "block",
+  filter: "brightness(0) invert(1)",
 });
