@@ -19,12 +19,12 @@ const RankBadge = ({ idx }) => {
 };
 
 export { RankBadge };
-const VideoPreview = ({ nickname, likeCount, imageUrl, idx }) => {
+const VideoPreview = ({ nickname, likeCount, imageUrl, idx, showRankBadge = true }) => {
   return (
     <button type="button" className={styles.container}>
       <img src={imageUrl} alt={nickname} className={styles.image} />
       <div className={styles.nicknameWrapper}>
-        <RankBadge idx={idx} />
+        {showRankBadge && <RankBadge idx={idx} />}
         <div className={styles.nickname}>{nickname}</div>
       </div>
       <div className={styles.likes}>
