@@ -8,8 +8,8 @@ export const header = style({
   alignItems: "center",
   justifyContent: "space-between",
   padding: "0 20px",
-  backgroundColor: color.white,
-  borderBottom: "1px solid #E0E0E0",
+  backgroundColor: "transparent",
+  borderBottom: "none",
 });
 
 export const backButton = style({

@@ -4,6 +4,7 @@ import { Button } from "../../components/button/button";
 import { useUpload } from "../../hooks/useUpload";
 import * as styles from "./add-video.css";
 import plusGrayIcon from "../../assets/icons/plus-gray.png";
+import backgroundImage from "../../assets/images/background.png";
 
 const AddVideo = () => {
   const [description, setDescription] = useState("");
@@ -32,7 +33,15 @@ const AddVideo = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+      }}
+    >
       <AddVideoHeader />
       <div className={styles.container}>
         <input
