@@ -1,12 +1,11 @@
 import { VideoPreview } from "../video-preview/video-preview";
 import * as styles from "./main-grid.css";
 
-const MainGrid = ({ videos, observerRef }) => {
+const MainGrid = ({ videos }) => {
   return (
     <div className={styles.container}>
       {videos.map((video, index) => {
         const isRight = index % 2 === 0; // 0,2,4,... → 오른쪽 / 1,3,5,... → 왼쪽
-        const isLastItem = index === videos.length - 1; // 마지막 아이템인지 판단
 
         const classNames = [
           styles.item,
@@ -17,11 +16,7 @@ const MainGrid = ({ videos, observerRef }) => {
           .join(" ");
 
         return (
-          <div
-            key={video.videoId}
-            className={classNames}
-            ref={isLastItem ? observerRef : null}
-          >
+          <div key={video.videoId} className={classNames}>
             <VideoPreview
               idx={index}
               nickname={video.nickname}
