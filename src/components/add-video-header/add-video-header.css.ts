@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { color } from "../../styles/token/color";
 
 export const header = style({
   width: "100%",
@@ -7,8 +8,8 @@ export const header = style({
   alignItems: "center",
   justifyContent: "space-between",
   padding: "0 20px",
-  backgroundColor: "#fff",
-  borderBottom: "1px solid #E0E0E0",
+  backgroundColor: "transparent",
+  borderBottom: "none",
 });
 
 export const backButton = style({
@@ -35,10 +36,9 @@ export const backIcon = style({
 export const title = style({
   fontSize: "18px",
   fontWeight: 590,
-  fontFamily: "SF Pro",
   lineHeight: "22px",
   letterSpacing: "0px",
-  color: "#000",
+  color: color.black,
   position: "absolute",
   left: "50%",
   transform: "translateX(-50%)",
