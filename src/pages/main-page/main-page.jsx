@@ -12,69 +12,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useCallback } from "react";
 
-const MOCK_VIDEOS = [
-  {
-    videoId: 1,
-    nickname: "사용자1",
-    likeCount: 10,
-    imageUrl: sampleImage,
-  },
-  {
-    videoId: 2,
-    nickname: "사용자2",
-    likeCount: 20,
-    imageUrl: sampleImage2,
-  },
-  {
-    videoId: 3,
-    nickname: "사용자3",
-    likeCount: 30,
-    imageUrl: sampleImage3,
-  },
-  {
-    videoId: 4,
-    nickname: "사용자4",
-    likeCount: 40,
-    imageUrl: sampleImage,
-  },
-  {
-    videoId: 5,
-    nickname: "사용자5",
-    likeCount: 40,
-    imageUrl: sampleImage2,
-  },
-  {
-    videoId: 6,
-    nickname: "사용자6",
-    likeCount: 40,
-    imageUrl: sampleImage3,
-  },
-  {
-    videoId: 7,
-    nickname: "사용자7",
-    likeCount: 40,
-    imageUrl: sampleImage,
-  },
-  {
-    videoId: 8,
-    nickname: "사용자5",
-    likeCount: 40,
-    imageUrl: sampleImage2,
-  },
-  {
-    videoId: 9,
-    nickname: "사용자6",
-    likeCount: 40,
-    imageUrl: sampleImage3,
-  },
-  {
-    videoId: 10,
-    nickname: "사용자7",
-    likeCount: 40,
-    imageUrl: sampleImage,
-  },
-];
-
 const MainPage = () => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(false);
