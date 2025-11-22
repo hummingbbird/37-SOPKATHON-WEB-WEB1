@@ -5,6 +5,7 @@ import MainPage from "../pages/main-page/main-page";
 import AddVideo from "../pages/add-video/add-video";
 import MyPage from "../pages/my-page/my-page";
 import { SignUpPage } from "../pages/sign-up/sign-up";
+import { Splash } from "../pages/splash/splash";
 
 export const router = createBrowserRouter([
   {
@@ -28,5 +29,9 @@ export const router = createBrowserRouter([
   {
     path: "sign-up",
     element: <SignUpPage />,
+  },
+  {
+    path: "splash",
+    element: <Splash />,
   },
 ]);
