@@ -2,9 +2,10 @@ import { globalStyle } from "@vanilla-extract/css";
 
 /** HTML & Body style */
 globalStyle("html, body", {
-  width: "100%",
-  // minHeight: "100vh", (웹앱일 경우 주석 제거)
-  margin: "0",
+  width: "375px",
+  maxWidth: "100vw",
+  minHeight: "100vh",
+  margin: "0 auto",
   padding: "0",
   boxSizing: "border-box",
   scrollBehavior: "smooth",
