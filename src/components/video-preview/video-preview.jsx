@@ -1,4 +1,3 @@
-// VideoPreview.tsx
 import * as styles from "./video-preview.css";
 
 const VideoPreview = ({ nickname, likeCount, imageUrl }) => {
