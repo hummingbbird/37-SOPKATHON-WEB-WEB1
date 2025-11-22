@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { color } from "../../styles/token/color";
+import backgroundImage from "../../assets/images/background.png";
 
 export const pageContainer = style({
   minHeight: "100vh",
@@ -8,6 +9,7 @@ export const pageContainer = style({
   alignItems: "center",
   padding: "2rem",
   position: "relative",
+  backgroundImage: `url(${backgroundImage})`,
 });
 
 export const header = style({
@@ -19,6 +21,7 @@ export const header = style({
 });
 
 export const mainContent = style({
+  position: "relative",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -35,12 +38,31 @@ export const title = style({
   lineHeight: "140%",
 });
 
+export const scoreBoardWrapper = style({
+  position: "relative",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+});
+
+export const scoreBoardImage = style({
+  width: "100%",
+  height: "auto",
+  objectFit: "cover",
+});
+
 export const scoreText = style({
+  position: "absolute",
+  top: "62%",
+  left: "50%",
+
+  transform: "translate(-50%, -50%)",
+
   fontSize: "4rem",
   fontWeight: 700,
-  color: "#DC453A",
+  color: color.brand["red"],
   textAlign: "center",
-  marginTop: "38.5rem",
+  whiteSpace: "nowrap",
 });
 
 export const buttonContainer = style({

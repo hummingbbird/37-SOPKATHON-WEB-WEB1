@@ -15,24 +15,15 @@ const AiScore = () => {
   };
 
   return (
-    <div
-      className={styles.pageContainer}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className={styles.pageContainer}>
       <h1 className={styles.header}>점수 확인</h1>
 
-      <div className={styles.mainContent}>
-        <h2 className={styles.title}>
-          낙엽의 지배자님의
-          <br />
-          낙엽 평가가 완료되었어요!
-        </h2>
-
+      <div className={styles.scoreBoardWrapper}>
+        <img
+          src={backgroundImage}
+          alt="점수 배경"
+          className={styles.scoreBoardImage}
+        />
         <p className={styles.scoreText}>78점</p>
       </div>
 
