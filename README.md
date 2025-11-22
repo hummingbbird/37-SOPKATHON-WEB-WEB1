@@ -1,6 +1,6 @@
 <div align="center">
   <h2>서비스이름</h2>
-  <p>충북 가지마! 나만 갈래</p>
+  <p>.</p>
 </div>
 
 <h2> 한줄소개 </h2>
@@ -104,6 +104,6 @@
 
 <h2>🍁웹계인 Before & After</h2>
 <h3>Before🤩</h3>
-<img src="https://github.com/user-attachments/assets/1b752a2e-ab1f-4b2f-93d2-38d77aa69f3f" alt="웹 1조 before 사진"/>
+<img src="https://github.com/user-attachments/assets/855dfb67-9e5d-45f1-8b91-5eb1bff52a80" alt="웹 1조 before 사진"/>
 
 <h3>After😫</h3>
