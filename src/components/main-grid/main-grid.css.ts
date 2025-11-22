@@ -1,27 +1,27 @@
+// main-grid.css.ts
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: "0",
+  display: "grid",
+  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+  gridAutoRows: "130px", // 한 "행" 높이 (카드 높이보다 작게 잡으면 겹쳐 보임)
+  columnGap: "0",
+  rowGap: "0",
   position: "relative",
 });
 
 export const item = style({
-  width: "58%", // 카드가 전체의 절반만 차지하도록
+  position: "relative",
+  gridRowEnd: "span 2", 
+  height: "200px", // TODO: 카드 높이 변경 예정
 });
 
-// 왼쪽 정렬 아이템
+// 왼쪽 컬럼
 export const itemLeft = style({
-  alignSelf: "flex-start",
+  gridColumn: "1 / 2",
 });
 
-// 오른쪽 정렬 아이템
+// 오른쪽 컬럼
 export const itemRight = style({
-  alignSelf: "flex-end",
-});
-
-// 위로 당겨서 행이 겹치도록 (값은 카드 높이에 맞게 조절)
-export const itemOverlap = style({
-  marginTop: "-120px", // TODO: 카드 크기의 절반으로 수정해야됨
+  gridColumn: "2 / 3",
 });
