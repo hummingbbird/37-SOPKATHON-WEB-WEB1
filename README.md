@@ -102,6 +102,34 @@
 
 <br/>
 
+<h2>폴더구조</h2>
+
+```
+📦src
+ ┣ 📂apis
+ ┣ 📂assets
+ ┣ 📂components
+ ┣ 📂constants
+ ┣ 📂hooks
+ ┣ 📂layouts
+ ┣ 📂pages
+ ┣ 📂routes
+ ┣ 📂styles
+ ┣ 📂utils
+ ┣ 📜App.jsx
+ ┗ 📜main.jsx
+```
+
+<br>
+
+<h2>그라운드 룰</h2>
+
+#### 1. 투명하고 즉각적인 공유 📢
+#### 2. 긍정적이고 자신감있는 태도 😊
+#### 3. 개발은 기세다 ㅋㅋ 👍
+
+<br>
+
 <h2>🍁웹계인 Before & After</h2>
 <h3>Before🤩</h3>
 <img src="https://github.com/user-attachments/assets/855dfb67-9e5d-45f1-8b91-5eb1bff52a80" alt="웹 1조 before 사진"/>
