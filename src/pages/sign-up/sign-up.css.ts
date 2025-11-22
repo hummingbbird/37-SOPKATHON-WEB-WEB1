@@ -1,12 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { color } from "./../../styles/token/color";
 import { typography } from "./../../styles/token/typography";
-import splashbg from "../../assets/images/splashbg.png";
-// export const container = style({
-//   position: "relative",
-//   width: "100%",
-//   height: "100vh",
-// });
+import splashbg from "./../../assets/images/splashbg.png";
 
 export const container = style({
   position: "relative",
