@@ -56,12 +56,12 @@ const AiScore = () => {
           <br />
           낙엽 평가가 완료되었어요!
         </h2>
+        <p className={styles.scoreText}>{score}점</p>
         <img
           src={backgroundImage}
           alt="점수 배경"
           className={styles.scoreBoardImage}
         />
-        <p className={styles.scoreText}>{score}점</p>
       </div>
 
       <div className={styles.buttonContainer}>
