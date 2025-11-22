@@ -8,5 +8,9 @@ export const base = style({
   border: `1px solid ${color.gray[400]}`,
   borderRadius: "0.8rem",
   backgroundColor: color.white,
-  ...typography.body2,
+  ...typography.body1,
+
+  "::placeholder": {
+    color: color.gray[500],
+  },
 });
