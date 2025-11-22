@@ -3,6 +3,7 @@ import { Input } from "./../../components/input/input";
 import { Button } from "./../../components/button/button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "./../../assets/images/logo.png";
 
 export const SignUpPage = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export const SignUpPage = () => {
         <div className={styles.title}>회원가입</div>
       </header>
       <div className={styles.form}>
-        <div className={styles.iconBox}>앱 로고</div>
+        <img className={styles.iconBox} src={logo} alt="로고" />
         <div className={styles.inputBox}>
           <Input
             type="text"
@@ -63,9 +64,7 @@ export const SignUpPage = () => {
             </div>
           )}
         </div>
-        <Button type="primary" onClick={handleSubmit}>
-          시작하기
-        </Button>
+        <Button onClick={handleSubmit}>시작하기</Button>
       </div>
     </div>
   );
