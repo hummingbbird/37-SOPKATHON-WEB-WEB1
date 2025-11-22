@@ -4,7 +4,7 @@ import { typography } from "../../styles/token/typography";
 
 export const base = style({
   width: "100%",
-  borderRadius: "0.5rem",
+  borderRadius: "0.8rem",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
@@ -40,7 +40,7 @@ export const buttonVariants = styleVariants({
   default: [
     base,
     {
-      backgroundColor: color.gray[700],
+      backgroundColor: color.gray[600],
       color: color.white,
     },
   ],
