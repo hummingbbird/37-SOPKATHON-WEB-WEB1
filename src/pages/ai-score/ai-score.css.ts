@@ -48,12 +48,12 @@ export const scoreBoardWrapper = style({
 export const scoreBoardImage = style({
   width: "100%",
   height: "auto",
-  objectFit: "cover",
+  objectFit: "contain",
 });
 
 export const scoreText = style({
   position: "absolute",
-  top: "53.5%",
+  top: "10.5%",
   left: "50%",
 
   transform: "translate(-50%, -50%)",
